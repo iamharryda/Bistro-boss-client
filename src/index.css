@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swal-confirm-button {
+  @apply bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mr-5
+}
+
+.swal-cancel-button {
+  @apply bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700;
+}
