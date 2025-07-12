@@ -1,10 +1,9 @@
-
 import { Navigate, useLocation } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
 import useAuth from "../hooks/useAuth";
 
 const AdminRoute = ({ children }) => {
-    const [user, loading] = useAuth();
+    const { user, loading } = useAuth();
     const [isAdmin, isAdminLoading] = useAdmin();
     const location = useLocation();
 
@@ -15,6 +14,12 @@ const AdminRoute = ({ children }) => {
     if (user && isAdmin) {
         return children;
     }
+
+    // ✅ Optional: show access denied if logged in but not admin
+    if (user && !isAdmin) {
+        return <Navigate to="/unauthorized" replace />;
+    }
+
     return <Navigate to="/login" state={{ from: location }} replace />;
 };
 
