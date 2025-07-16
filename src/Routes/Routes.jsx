@@ -8,7 +8,6 @@ import Order from "../pages/Order/Order/Order";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
-import Secret from "../pages/Shared/Secret/Secret";
 import Dashboard from "../Layout/Dashboard";
 import { Cart } from "../pages/Dashboard/Cart/Cart";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
@@ -20,6 +19,7 @@ import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 import UserHome from "../pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
+import ManageBookings from "../pages/Dashboard/ManageBookings/ManageBookings";
 
 
 export const router = createBrowserRouter([
@@ -46,10 +46,6 @@ export const router = createBrowserRouter([
       {
         path: 'signup',
         element: <SignUp></SignUp>
-      },
-      {
-        path: 'secret',
-        element: <PrivateRoute><Secret></Secret></PrivateRoute>
       }
     ]
   },
@@ -87,6 +83,10 @@ export const router = createBrowserRouter([
       {
         path: 'manageItems',
         element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
+      },
+      {
+        path: 'bookings',
+        element: <AdminRoute><ManageBookings></ManageBookings></AdminRoute>
       },
       {
         path: 'updateItem/:id',
