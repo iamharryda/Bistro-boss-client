@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import useAuth from "./useAuth"
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://bistro-boss-server-with-auth-gold.vercel.app'
 })
 
 const useAxiosSecure = () => {
@@ -53,7 +53,7 @@ import { useNavigate } from "react-router-dom"
 import useAuth from "./useAuth"
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://bistro-boss-server-with-auth-gold.vercel.app'
 })
 const useAxiosSecure = () => {
     const navigate = useNavigate()
