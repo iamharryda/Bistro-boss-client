@@ -9,8 +9,12 @@ import useAdmin from "../../../hooks/useAdmin";
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
     const [cart] = useCart()
-    const { isAdmin } = useAdmin();
+    const [isAdmin, isAdminLoading] = useAdmin();
     //console.log(cart)
+
+    if (isAdminLoading) {
+        return <span className="loading loading-ring loading-xl"></span>
+    }
 
     const handleLogOut = () => {
         logOut()
@@ -102,7 +106,7 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal px-1">{navOptions}</ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Get started</a>
+
                 </div>
             </div>
         </>
