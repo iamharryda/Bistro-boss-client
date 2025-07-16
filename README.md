@@ -85,7 +85,7 @@ VITE_PAYMENT_KEY= stripe payment key
 
 ### 📋 Menu Management
 
-![Menu Management](./Screenshots/Screenshot%202025-07-16%20at%2022.06.58.png)
+![Menu Management](./Screenshots/Screenshot%202025-07-16%20at%2022.06.29.png)
 
 ## 📜 License
 
