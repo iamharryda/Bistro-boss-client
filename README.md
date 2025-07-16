@@ -1,5 +1,7 @@
 # 🍽️ Bistro Boss – Restaurant Management App (MERN Stack)
 
+🚀 **Live Demo:** [https://bistro-boss-8ffe3.web.app/](https://bistro-boss-8ffe3.web.app/)
+
 **Bistro Boss** is a full-featured restaurant management application built with the **MERN stack** (MongoDB, Express.js, React with Vite, and Node.js). It provides an intuitive interface to manage menus, orders, users, roles, and reservations — now enhanced with **authentication and authorization** features for secure access control.
 
 [👉 Server Repository](https://github.com/iamharryda/Bistro-boss-server)
