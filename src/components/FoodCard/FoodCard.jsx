@@ -2,7 +2,7 @@ import Swal from "sweetalert2/src/sweetalert2";
 import useAuth from "../../hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-import useCart from "../../hooks/useCart";
+import { useQueryClient } from "@tanstack/react-query";
 
 const FoodCard = ({ item }) => {
     const navigate = useNavigate();
@@ -10,7 +10,7 @@ const FoodCard = ({ item }) => {
     const { name, image, price, recipe, _id } = item;
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
-    const [refetch] = useCart()
+    const queryClient = useQueryClient()
 
     const handleAddToCart = () => {
         if (user && user.email) {
@@ -35,7 +35,7 @@ const FoodCard = ({ item }) => {
                             timer: 2000
                         });
                         // refetch cart to update the cart items
-                        refetch();
+                        queryClient.invalidateQueries(["cart", user.email]);
                     }
                 })
                 .catch((err) => {

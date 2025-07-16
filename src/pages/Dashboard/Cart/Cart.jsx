@@ -1,7 +1,10 @@
 import Swal from "sweetalert2";
-import useCart from "../../hooks/useCart";
+
 import { MdDelete } from "react-icons/md";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
+
+import useCart from "../../../hooks/useCart";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 export const Cart = () => {
     const [cart, refetch] = useCart();
@@ -32,11 +35,19 @@ export const Cart = () => {
         });
     };
     return (
-        <div>
+        <div className="mt-8 ml-4">
             <div className="flex justify-evenly mb-8">
                 <h2 className="text-4xl">Items: {cart?.length || 0}</h2>
-                <h2 className="text-4xl">Total Price: {totalPrice}</h2>
-                <button className="btn btn-primary">Pay</button>
+                <h2 className="text-4xl">Total Price: {totalPrice} $</h2>
+                {cart.length ? (
+                    <Link to="/dashboard/payment">
+                        <button className="btn btn-primary">Pay</button>
+                    </Link>
+                ) : (
+                    <button disabled={!cart.length} className="btn btn-primary">Pay</button>
+                )
+
+                }
             </div>
             <div className="overflow-x-auto">
                 <table className="table w-full">
@@ -53,7 +64,7 @@ export const Cart = () => {
                     <tbody>
                         {cart.map((item, index) => (
                             <tr key={item._id}>
-                                <th>{index}</th>
+                                <th>{index + 1}</th>
                                 <td>
                                     <div className="mask mask-squircle h-12 w-12">
                                         <img src={item.image} alt={item.name} />
@@ -64,7 +75,7 @@ export const Cart = () => {
                                 <td>
                                     <button
                                         onClick={() => handleDelete(item._id)}
-                                        className="btn btn-ghost btn-lg"
+                                        className="btn btn-ghost btn-lg text-2xl"
                                     >
                                         <MdDelete className="text-red-500"></MdDelete>
                                     </button>

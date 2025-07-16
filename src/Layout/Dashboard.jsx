@@ -4,6 +4,7 @@ import {
     FaCalendar,
     FaHome,
     FaList,
+    FaMoneyCheck,
     FaShoppingCart,
     FaUtensils,
 } from "react-icons/fa";
@@ -22,7 +23,15 @@ const Dashboard = () => {
     };
 
     //Todo: get isAdmin value from the database
-    const isAdmin = useAdmin()
+    const [isAdmin, isAdminLoading] = useAdmin();
+
+    if (isAdminLoading) {
+        return (
+            <div className="p-4">
+                <span className="loading loading-ball loading-xl"></span>
+            </div>
+        ); // or a spinner
+    }
 
     return (
         <div className="flex">
@@ -32,27 +41,27 @@ const Dashboard = () => {
                         <>
                             <li>
                                 <NavLink to="/dashboard/adminhome">
-                                    <FaHome></FaHome> Admin Home
+                                    <FaHome /> Admin Home
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/addItem">
-                                    <FaUtensils></FaUtensils> Add Items
+                                    <FaUtensils /> Add Items
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/manageItems">
-                                    <FaList></FaList> Manage Items
+                                    <FaList /> Manage Items
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/bookings">
-                                    <FaBook></FaBook> Manage Bookings
+                                    <FaBook /> Manage Bookings
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/users">
-                                    <LuUsers></LuUsers> All users
+                                    <LuUsers /> All Users
                                 </NavLink>
                             </li>
                             <li>
@@ -63,27 +72,32 @@ const Dashboard = () => {
                         <>
                             <li>
                                 <NavLink to="/dashboard/userhome">
-                                    <FaHome></FaHome> UserHome
+                                    <FaHome /> User Home
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/reservation">
-                                    <FaCalendar></FaCalendar> Reservation
+                                    <FaCalendar /> Reservation
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/cart">
-                                    <FaShoppingCart></FaShoppingCart> My Cart({cart_num()})
+                                    <FaShoppingCart /> My Cart ({cart_num()})
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/dashboard/payment-history">
+                                    <FaMoneyCheck /> My Payment History
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/review">
-                                    <FaAd></FaAd> Add a Review
+                                    <FaAd /> Add a Review
                                 </NavLink>
                             </li>
                             <li>
                                 <NavLink to="/dashboard/bookings">
-                                    <FaList></FaList> My Bookings
+                                    <FaList /> My Bookings
                                 </NavLink>
                             </li>
                             <li>
