@@ -1,34 +1,96 @@
-# Bistro Boss Client with Authentication
+# 🍽️ Bistro Boss – Restaurant Management App (MERN Stack)
 
-Bistro Boss is a comprehensive restaurant management website built using the MERN stack (MongoDB, Express.js, React with Vite, and Node.js). This application aims to streamline restaurant operations, providing an intuitive interface for managing reservations, orders, menus, and staff. This version includes authentication features to enhance security and user management.
-[Server Repo Link](https://github.com/ProgrammingHero1/bistro-boss-server-with-auth)
+**Bistro Boss** is a full-featured restaurant management application built with the **MERN stack** (MongoDB, Express.js, React with Vite, and Node.js). It provides an intuitive interface to manage menus, orders, users, roles, and reservations — now enhanced with **authentication and authorization** features for secure access control.
 
-## New Packages Used
+[👉 Server Repository](https://github.com/iamharryda/Bistro-boss-server)
 
-### react-hook-form
-- **Version:** ^7.19.5
-- **Description:** A performant, flexible, and extensible form library for React, providing easy-to-use hooks for handling form state and validation.
+---
 
-### sweetalert
-- **Version:** ^2.1.2
-- **Description:** A beautiful and responsive replacement for JavaScript's alert, used to enhance user experience by providing custom alerts for login and registration events.
+## 🚀 Features
 
-### react-simple-captcha
-- **Version:** ^1.0.5
-- **Description:** A simple and customizable captcha component for React applications, used to prevent DDOS attacks by verifying human users during the authentication process.
+- 🔐 **Authentication & Authorization** (JWT-based)
+- 📋 **Role-based Dashboards** (Admin & User)
+- 🛒 **Menu & Order Management**
+- 🧑‍🍳 **Staff/Admin Management**
+- 📆 **Reservations**
+- ⚡ **Fast and Modern UI** with Vite + Tailwind CSS
+- 🔁 **Persistent Login** and Protected Routes
+- 🌐 **Responsive Design**
+- 💳 **Payment Intigration** with Stripe
 
-## What We Did Today
+---
 
-- **Created Login and Registration Page:** Designed and developed pages for user login and registration to facilitate secure user access.
-- **Created Form for Authentication Using React Hook Form:** Implemented authentication forms using `react-hook-form` for efficient form handling and validation.
-- **Added Captcha for Preventing DDOS Attack:** Integrated `react-simple-captcha` to add a captcha to the authentication forms, ensuring protection against automated attacks.
-- **Implemented Sweetalert for Login and Registration Events:** Used `sweetalert` to provide user-friendly and visually appealing alerts for successful and failed login/registration attempts.
-- **Added Validation with Regex:** Applied regular expressions for robust validation of user inputs during registration & login processes.
-- **Updated User Profile After Successful Login:** Implemented functionality to update and display user profile information upon successful login.
+## 🛠️ Tech Stack
 
-## Getting Started
+| Frontend               | Backend           | Auth & DB     |
+| ---------------------- | ----------------- | ------------- |
+| React (Vite)           | Node.js + Express | Firebase Auth |
+| Tailwind CSS           | REST API          | MongoDB       |
+| React Router           |                   | JWT           |
+| Axios / TanStack Query |                   |               |
 
-Clone the repository to explore and analyze the full code.  You have to replace your own credintial on .env.local
+---
+
+## 📦 Getting Started
+
+> 💡 **Prerequisites:** Node.js, npm, and internet access
+
+### 1. Clone the repository
+
 ```bash
-git clone https://github.com/ProgrammingHero1/bistro-boss-client-with-auth.git
+git clone https://github.com/iamharryda/bistro-boss-client.git
+cd bistro-boss-client
 ```
+
+### 2. install dependancy
+
+```bash
+npm install
+```
+
+### 3. Start the developement server
+
+```bash
+npm run dev
+```
+
+##🔐 Environment Variables
+Create a .env.local file in the root and add your Firebase and server config:
+
+```bash
+VITE_API_URL=https://your-server-url.com
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_IMAGE_HOSTING_KEY= imgbb hosting key
+VITE_PAYMENT_KEY= stripe payment key
+
+
+```
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home Page](/bistro-boss-client-with-auth/Screenshots/Screenshot%202025-07-16%20at%2022.03.36.png)
+
+### 🧑‍🍳 Admin Dashboard
+
+![Admin Dashboard](./Screenshots/Screenshot%202025-07-16%20at%2022.06.58.png)
+
+### 📋 Menu Management
+
+![Menu Management](./screenshots/Screenshot%202025-07-16%20at%2022.06.29.png)
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙋‍♂️ Author
+
+Built with ❤️ by [@iamharryda](https://github.com/iamharryda)
