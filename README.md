@@ -77,7 +77,7 @@ VITE_PAYMENT_KEY= stripe payment key
 
 ### 🏠 Home Page
 
-![Home Page](/bistro-boss-client-with-auth/Screenshots/Screenshot%202025-07-16%20at%2022.03.36.png)
+![Home Page](./Screenshots/Screenshot%202025-07-16%20at%2022.03.36.png)
 
 ### 🧑‍🍳 Admin Dashboard
 
@@ -85,7 +85,7 @@ VITE_PAYMENT_KEY= stripe payment key
 
 ### 📋 Menu Management
 
-![Menu Management](./screenshots/Screenshot%202025-07-16%20at%2022.06.29.png)
+![Menu Management](./Screenshots/Screenshot%202025-07-16%20at%2022.06.58.png)
 
 ## 📜 License
 
